@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ChestContent" format=3 uid="uid://v6fx10tponp8"]
+
+[ext_resource type="Script" uid="uid://cs37els6ip2ei" path="res://Scripts/ChestContent.gd" id="1_jojll"]
+
+[resource]
+script = ExtResource("1_jojll")
+metadata/_custom_type_script = "uid://cs37els6ip2ei"

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3 uid="uid://dqioticgp2pcx"]
+
+[ext_resource type="Script" uid="uid://ch88we18htlsn" path="res://Scripts/EnemyData.gd" id="1_6d5x6"]
+
+[resource]
+script = ExtResource("1_6d5x6")
+enemy_name = "Esqueleto"
+move_speed = 35.0
+chase_speed = 35.0
+metadata/_custom_type_script = "uid://ch88we18htlsn"

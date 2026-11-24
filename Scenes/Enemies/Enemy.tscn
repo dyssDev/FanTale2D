@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ddu332mt28j54"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvmt0"]
+size = Vector2(10, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvmt0"]
+radius = 64.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvpmd"]
+size = Vector2(10, 12)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1603114388]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=878746650]
+shape = SubResource("RectangleShape2D_tvmt0")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=177846135]
+
+[node name="ColorRect" type="ColorRect" parent="Visuals" unique_id=1051684308]
+offset_left = -5.0
+offset_top = -7.0
+offset_right = 5.0
+offset_bottom = 7.0
+color = Color(0.3553321, 0.13411865, 0.44419566, 1)
+
+[node name="EdgeRayCast" type="RayCast2D" parent="Visuals" unique_id=902704150]
+position = Vector2(7, 0)
+target_position = Vector2(0, 12)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1628604130]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=771308260]
+shape = SubResource("CircleShape2D_tvmt0")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=700794121]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1697471575]
+shape = SubResource("RectangleShape2D_fvpmd")

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ChestContent" format=3 uid="uid://1qrp5alsbrqu"]
+
+[ext_resource type="Script" uid="uid://cs37els6ip2ei" path="res://Scripts/ChestContent.gd" id="1_d5r6h"]
+[ext_resource type="Resource" uid="uid://d15efd1jwh6x1" path="res://Resources/Weapons/greatsword.tres" id="2_qcjit"]
+
+[resource]
+script = ExtResource("1_d5r6h")
+type = 1
+weapon_data = ExtResource("2_qcjit")
+metadata/_custom_type_script = "uid://cs37els6ip2ei"

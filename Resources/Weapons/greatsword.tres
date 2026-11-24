@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://d15efd1jwh6x1"]
+
+[ext_resource type="Script" uid="uid://bggkejb56jnum" path="res://Scripts/WeaponData.gd" id="1_a2nfx"]
+
+[resource]
+script = ExtResource("1_a2nfx")
+weapon_name = "Mandoble"
+damage = 3
+attack_cooldown = 0.65
+active_duration = 0.22
+hitbox_size = Vector2(24, 16)
+hitbox_offset = Vector2(18, -8)
+move_speed_multiplier = 0.85
+self_knockback = 65.0
+visual_color = Color(0.5529412, 0.6, 0.68235296, 1)
+metadata/_custom_type_script = "uid://bggkejb56jnum"

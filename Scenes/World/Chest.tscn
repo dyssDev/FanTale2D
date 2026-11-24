@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dr2bv7f45ir0a"]
+
+[ext_resource type="Script" uid="uid://p8rkbnfou7pi" path="res://Scenes/World/Chest.gd" id="1_ki5eb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvmt0"]
+size = Vector2(14, 12)
+
+[node name="Chest" type="Area2D" unique_id=845920647]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_ki5eb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278417438]
+shape = SubResource("RectangleShape2D_tvmt0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=637702117]
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 7.0
+offset_bottom = 5.0
+color = Color(0.54509807, 0.42352942, 0.007843138, 1)
+
+[node name="PromptLabel" type="Label" parent="." unique_id=348283985]
+visible = false
+offset_left = -4.0
+offset_top = -20.0
+offset_right = 5.0
+offset_bottom = 3.0
+text = "Abrir[F]"

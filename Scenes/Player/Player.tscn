@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dqlusalffxcvj"]
+
+[ext_resource type="Script" uid="uid://ccl04esqsjurg" path="res://Scenes/Player/Player.gd" id="1_s0eop"]
+[ext_resource type="Script" uid="uid://67dn6durl8bi" path="res://Scenes/Player/PlayerStats.gd" id="2_ft8w5"]
+[ext_resource type="Resource" uid="uid://chgd77uskjb63" path="res://Resources/Weapons/dagger.tres" id="2_h54ih"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvpmd"]
+size = Vector2(10, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4l53"]
+size = Vector2(14, 10)
+
+[node name="Player" type="CharacterBody2D" unique_id=1881938115]
+position = Vector2(13, -4)
+collision_layer = 2
+script = ExtResource("1_s0eop")
+move_speed = null
+acceleration = null
+friction = null
+jump_velocity = null
+gravity = null
+fall_gravity_multiplier = null
+jump_cut_multiplier = null
+max_fall_speed = null
+coyote_time_duration = null
+jump_buffer_duration = null
+current_weapon = ExtResource("2_h54ih")
+knockback_force = null
+hurt_stun_duration = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799839612]
+position = Vector2(-5, -7)
+scale = Vector2(1, 1.4)
+shape = SubResource("RectangleShape2D_fvpmd")
+
+[node name="Visuals" type="Node2D" parent="." unique_id=1213274803]
+
+[node name="ColorRect" type="ColorRect" parent="Visuals" unique_id=422573402]
+offset_left = -10.0
+offset_top = -14.0
+color = Color(0.22546381, 0.5266414, 3.85046e-07, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WeaponHitbox" type="Area2D" parent="Visuals" unique_id=1035139043]
+collision_layer = 8
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visuals/WeaponHitbox" unique_id=27608325]
+position = Vector2(7, 5)
+shape = SubResource("RectangleShape2D_w4l53")
+disabled = true
+
+[node name="ColorRect" type="ColorRect" parent="Visuals/WeaponHitbox" unique_id=1183311773]
+visible = false
+offset_right = 14.0
+offset_bottom = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=525656421]
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+
+[node name="PlayerStats" type="Node" parent="." unique_id=1443197840]
+script = ExtResource("2_ft8w5")

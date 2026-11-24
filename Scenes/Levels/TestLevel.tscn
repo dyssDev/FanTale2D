@@ -1,0 +1,89 @@
+[gd_scene format=4 uid="uid://dtnb1rwumy7vf"]
+
+[ext_resource type="Script" uid="uid://b8dyj2n55ar0j" path="res://Scenes/Levels/TestLevel.gd" id="1_iuug4"]
+[ext_resource type="Texture2D" uid="uid://g2rtan0qwfen" path="res://assets/Tilesets/placeholder_tile.png" id="1_ytf4i"]
+[ext_resource type="PackedScene" uid="uid://dqlusalffxcvj" path="res://Scenes/Player/Player.tscn" id="2_7e5cw"]
+[ext_resource type="PackedScene" uid="uid://dr2bv7f45ir0a" path="res://Scenes/World/Chest.tscn" id="4_a7u0l"]
+[ext_resource type="PackedScene" uid="uid://b4yma25cy56wj" path="res://Scenes/Ui/hud.tscn" id="4_o0omn"]
+[ext_resource type="PackedScene" uid="uid://2do0vcfum708" path="res://Scenes/Enemies/Goblin.tscn" id="5_o0omn"]
+[ext_resource type="Resource" uid="uid://v6fx10tponp8" path="res://Resources/chest_key.tres" id="5_qhub5"]
+[ext_resource type="PackedScene" uid="uid://cd7vtrdcgsnbg" path="res://Scenes/World/Door.tscn" id="6_cuare"]
+[ext_resource type="Resource" uid="uid://1qrp5alsbrqu" path="res://Resources/chest_greatsword.tres" id="7_a1huo"]
+[ext_resource type="Resource" uid="uid://cvnfsvjqxsogj" path="res://Resources/chest_bow.tres" id="8_buhu8"]
+[ext_resource type="PackedScene" uid="uid://cu8838hsv0gyc" path="res://Scenes/World/Checkpoint.tscn" id="9_a1huo"]
+[ext_resource type="PackedScene" uid="uid://cx8jr5iyg0tmu" path="res://Scenes/Enemies/Skeleton.tscn" id="10_jj57x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iuug4"]
+texture = ExtResource("1_ytf4i")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_tvmt0"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_iuug4")
+
+[node name="Node2D" type="Node2D" unique_id=679176286]
+script = ExtResource("1_iuug4")
+
+[node name="Player" parent="." unique_id=1881938115 instance=ExtResource("2_7e5cw")]
+position = Vector2(34, -19)
+move_speed = 110.0
+acceleration = 900.0
+friction = 1100.0
+jump_velocity = -245.0
+gravity = 720.0
+fall_gravity_multiplier = 1.35
+jump_cut_multiplier = 0.5
+max_fall_speed = 320.0
+coyote_time_duration = 0.1
+jump_buffer_duration = 0.1
+knockback_force = Vector2(130, -140)
+hurt_stun_duration = 0.2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1486249762]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_tvmt0")
+
+[node name="Chest" parent="TileMapLayer" unique_id=845920647 instance=ExtResource("4_a7u0l")]
+position = Vector2(549, -23)
+chest_id = "test_2"
+content = ExtResource("5_qhub5")
+
+[node name="Door" parent="TileMapLayer" unique_id=687213625 instance=ExtResource("6_cuare")]
+position = Vector2(821, -31)
+
+[node name="Chest2" parent="TileMapLayer" unique_id=1533816560 instance=ExtResource("4_a7u0l")]
+position = Vector2(-63, 39)
+chest_id = "test_sword"
+content = ExtResource("7_a1huo")
+
+[node name="Chest" parent="TileMapLayer/Chest2" unique_id=2113342359 instance=ExtResource("4_a7u0l")]
+position = Vector2(260, 144)
+chest_id = "test_bow"
+content = ExtResource("8_buhu8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1709908156]
+
+[node name="HUD" parent="CanvasLayer" unique_id=681966475 instance=ExtResource("4_o0omn")]
+
+[node name="Skeleton" parent="." unique_id=1603114388 instance=ExtResource("10_jj57x")]
+position = Vector2(40, 46)
+
+[node name="Goblin" parent="." unique_id=1902648042 instance=ExtResource("5_o0omn")]
+position = Vector2(420, -26)
+
+[node name="Goblin2" parent="." unique_id=1809797408 instance=ExtResource("5_o0omn")]
+position = Vector2(169, -74)
+
+[node name="Chest" parent="." unique_id=1352859659 instance=ExtResource("4_a7u0l")]
+position = Vector2(272, -120)
+chest_id = "test_1"
+content = ExtResource("5_qhub5")
+
+[node name="Chest2" parent="." unique_id=1520513710 instance=ExtResource("4_a7u0l")]
+position = Vector2(561, -71)
+chest_id = "test_3"
+content = ExtResource("5_qhub5")
+
+[node name="Checkpoint" parent="." unique_id=1611119572 instance=ExtResource("9_a1huo")]
+position = Vector2(408, -75)
